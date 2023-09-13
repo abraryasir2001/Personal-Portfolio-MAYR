@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #46312a;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/* Desktop nav start*/
+nav,.nav-links{
+    display: flex;
+    color: white;
+}
+nav{
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    
+}
+.nav-links{
+    gap: 30px;
+    list-style: none;
+    font-size: 1.5rem;
+    padding-right: 40px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    /* text-decoration-color: white; */
+}
+a:hover{
+    color:#06ccff;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+}
+
+.logo{
+    font-size: 2rem;
+    padding-left: 130px;
+    font-weight: 600;
+}
+.logo span{
+    color: #06ccff;
+}
+/* .logo:hover{
+    cursor: default;
+    color:#D9792D;
+    transition-duration: 1s;
+} */
+/*Desktop nav end */
+
+section{
+    padding-top: 4vh;
+    height: 96vh;
+    margin: 0 10rem;
+    box-sizing: border-box;
+    min-height: fit-content;
+}
+#profile{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    padding-top: 80px;
+}
+.section_text{
+    text-align: center;
+    padding-top: 80px;
+}
+.section_text_p1{
+    font-weight: 800;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.dynamic-texts li{
+    list-style: none;
+    color:#06ccff;
+    font-size: 30px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: slide 12s steps(4) infinite;
+}
+
+.dynamic-texts li::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #46312a;
+    border-left: 2px solid #06ccff;
+    animation: typing 3s steps(10)infinite;
+}
+.section_text .dynamic-texts{
+    margin-left: 15px;
+    line-height: 90px;
+    height: 90px;
+    overflow: hidden;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.btn{
+    font-weight: 600;
+    padding: 1rem;
+    width: 8rem;
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    background-color: white;
+}
+.btn:hover{
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+.git-btn:hover{
+    background-color: #F04670;
+    color: white;
+}
+.CV-btn:hover{
+    background-color: #F04670;
+    color: white;
+}
+.demo-btn{
+    background-color: #F04670;
+    color: white;
+}
+.demo-btn:hover{
+    background-color: #e90a42;
+}
+.Contact-btn{
+    background-color: #F04670;
+    color: white;
+}
+.Contact-btn:hover{
+    background-color: #e90a42;
+}
+
+/* education section start */
+
+.edu-content{
+    display: grid;
+    border-left: 3px solid #bababa;
+    padding-left:50px ;
+}
+.edu-box{
+    position: relative;
+    padding: 20px;
+    border: 1px solid #eaeaea;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: all 0.4s;
+    margin-bottom: 20px;
+}
+.edu-box:hover{
+    box-shadow: 0px 3px 12px 0px #ccc;
+    border: 1px solid transparent;
+}
+.edu-box::before{
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    right: calc(100% + 42px);
+    top: 0;
+    background-color: #06ccff;
+    border: 2px solid white;
+}
+.edu_text_p1,.title{
+    text-align: center;
+}
+.title{
+   color: #06ccff;
+   font-size: 40px;
+}
+.edu_text_p1{
+    color: gray;
+    font-weight: 500;
+}
+
+/* education section end */
+
+/* skills section start */
+.sk-icon{
+    height: 30px;
+}
+.skills-title{
+    color: #06ccff;
+    font-size: 40px;
+    text-align: center;
+ }
+ .skills_text_p1{
+     color: gray;
+     font-weight: 500;
+     text-align: center;
+ }
+
+/* skills section start */
+ .sk-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 100px;
+ }
+ .sk-container .card{
+    position: relative;
+    width: 220px;
+    height: 250px;
+    background-color: #2a2a2a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .sk-container .card .percent{
+    position: relative;
+    width: 150px;
+    height: 150px;
+ }
+ .sk-container .card .percent svg{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(270deg);
+ }
+ .sk-container .card .percent svg circle{
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke-width: 2;
+    stroke: #191919;
+    transform: translate(5px,5px);
+ }
+ .sk-container .card .percent svg circle:nth-child(2)
+ {
+    stroke: var(--clr);
+    stroke-dasharray: 440;
+    stroke-dashoffset:calc(440 - (440* var(--num))/100) ;
+    opacity: 0;
+    animation: fadein 1s linear forwards;
+    animation-delay: 2.5s;
+
+ }
+ .dot{
+    position: absolute;
+    inset: 5px;
+    z-index: 10;
+    animation: animateDot 3s linear forwards infinite;
+ }
+ .dot::after{
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--clr);
+    box-shadow: 0 0 10px var(--clr)
+    0 0 30px var(--clr);
+ }
+ .number{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadein 1s linear forwards;
+    animation-delay: 1s;
+ }
+ .number h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 700;
+    font-size: 2.5rem;
+ }
+ .number h2 span{
+    font-weight: 300;
+    color: white;
+    font-size: 0.5rem;
+ }
+ .number p{
+    font-weight: 300;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+}
+
+
+/* skills section end */
+
+/* Achievement section start */
+.achi-title{
+    color: #06ccff;
+    font-size: 40px;
+    text-align: center;
+ }
+ .achi_text_p1{
+     color: gray;
+     font-weight: 500;
+     text-align: center;
+ }
+ .achi-box{
+    /* border: 2px solid black; */
+    margin: 0px 100px;
+    padding-left: 50px;
+ }
+ .achi-png{
+    width: 700px;
+ }
+ /* Achievement section end */
+ 
+ /* Projects section start */
+
+ .pro-title{
+    color: #06ccff;
+    font-size: 40px;
+    text-align: center;
+ }
+ .pro-text-p1{
+     color: gray;
+     font-weight: 500;
+     text-align: center;
+ }
+ .pro-img-personal{
+   width: 650px;
+ }
+ .pro-img{
+    /* border: 2px solid black; */
+    margin: 20px 150px;
+    padding-left: 50px; 
+ }
+ #projects{
+    margin-top: 20px;
+ }
+  /* Projects section end */
+
+  /* contact section start */
+   
+  .con-title{
+    color: #06ccff;
+    font-size: 40px;
+    text-align: center;
+ }
+ .con-text-p1{
+     color: gray;
+     font-weight: 500;
+     text-align: center;
+ }
+  .contact-box{
+    display: flex;
+    
+  }
+  .contact-left{
+    flex-basis: 60%;
+    padding: 40px 60px;
+    background: #fff;
+  }
+  .contact-right{
+    flex-basis: 40%;
+    padding: 40px;
+    background: #F04670;
+    color: #fff;
+  }
+  .input-row{
+    /* display: flex; */
+    justify-content: space-between;
+    margin-bottom: 0px;
+  }
+ textarea{
+    width: 100%;
+    border: 1px solid #ccc;
+    outline: none;
+    padding: 10px;
+    box-sizing: border-box;
+ }
+ label{
+    margin-bottom: 6px;
+    display: block;
+    color: #F04670;
+ }
+ .send{
+    background: #F04670;
+    width: 100px;
+    border: none;
+    outline: none;
+    color: #fff;
+    height: 35px;
+    border-radius: 30px;
+    margin-top: 20px;
+    box-shadow:0px 5px 15px 0px #F04670 ;
+    cursor: pointer;
+ }
+  input{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    padding-bottom: 15px;
+  }
+  .contact-left h3{
+    color:#F04670;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  .contact-right h3{
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  tr td:first-child{
+    padding-right: 20px;
+  }
+  tr td{
+    padding-top: 20px;
+  }
+  .con-title-two{
+    text-align: center;
+    padding: 50px;
+    margin-top: 80px;
+  }
+  .con-pics{
+    font-size: 30px;
+    color: white;
+    margin-left: 10px;
+  }
+  .con-piccc{
+   margin-left: 78px;
+   margin-top: -65px;
+  }
+  #contact{
+   margin-bottom: 40px;
+  }
+  /* contact section end */
+ 
